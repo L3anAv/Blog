@@ -23,7 +23,7 @@ jobs:
           go-version: '1.22'
 
       - name: Install Yamblg
-        run: go install github.com/leandro-avila/yamblg@latest
+        run: go install github.com/l3anav/yamblg@latest
 
     # Al usar el binario instalado, ya no necesitas go mod download ni go run .
       - name: Build site
