@@ -1,0 +1,478 @@
+.texto-central{
+  font-size:12px;
+  margin-top:20px;
+  margin-bottom:20px;
+  font-family: 'Sans';
+}
+
+.texto-central div{
+  
+  width: max-content;
+  margin-bottom:5px;
+  background: #f59e0b;
+  border-right:1px solid #000;
+  border-bottom:1px solid #000;
+}
+
+.texto-central div p{
+  color:#fff;
+  padding-left:12px;
+  padding-right:12px;
+}
+
+.texto-central h2{
+  line-height: 1.1;
+  font-size:2.3rem;
+  font-style: bold; 
+}
+
+.texto-central h2 span{
+  color:#f59e0b;
+  font-style: italic;
+  font-size:2.8rem;
+}
+
+.ultimos-posts{
+  width: 95%;
+  display: flex;
+  margin-top:20px;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: #edf2f7;
+  padding: 10px;
+  border-top: 3px solid #000000; 
+  border-left: 3px solid #000000;
+  border-right: 5px solid #000000; 
+  border-bottom: 5px solid #000000; 
+   
+}
+
+.ultimos-posts p{
+
+  color: #a4adbf;
+  font-size: 0.7rem;
+  font-weight: bold;
+  user-select: none;
+  letter-spacing: 1px;
+  align-self:flex-start;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.ultimos-posts ul{
+  width: 100%;
+
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.ultimos-posts ul li{
+  display: flex;
+  font-size:12px;
+  color:#94a3b8;
+  user-select: none;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ultimos-posts ul li a{
+
+  width:80%;
+  margin:5px;
+  padding:5px;
+  color:#000;
+  font-size:18px;
+  cursor:pointer;
+  font-family: 'Sans';
+  transition: all 0.1s ease 0.1s;
+
+}
+
+.ultimos-posts ul li a:hover{
+   color:#4790f7;
+}
+
+
+.ultimos-posts > a{
+
+  display: inline-block;
+  margin-bottom:10px;
+  padding:8px;
+  font-weight: bold;
+  color:black;
+  text-decoration: none;
+  background:#c4c4c4;
+  font-family: 'Sans';
+  font-size: clamp(0.625rem, 0.5529rem + 0.3846vw, 0.8125rem); 
+
+  border-top:1px solid #000;
+  border-left:1px solid #000;
+  border-right:3px solid #000;
+  border-bottom:3px solid #000;
+}
+
+.ultimos-posts > a:hover{  
+  color:var(--primary);
+  background:#e0e0e0;
+}
+
+.ultimos-posts > a:active{
+  
+  border-top:3px solid #000;
+  border-left:3px solid #000;
+  border-right:1px solid #000;
+  border-bottom:1px solid #000;
+
+  background-color: #aeb4be;
+}
+
+.lista-posts{
+  width: 95%;
+  margin-top:50px;
+}
+
+.lista-posts ul{
+    
+    margin:0;
+    padding: 0;
+    list-style: none;
+    
+    display: flex; 
+    align-items: center; 
+    flex-direction: column; 
+    justify-content: center;
+    
+}
+
+.lista-posts ul li{
+    
+    width: 100%; 
+    display: flex; 
+    padding: 20px;
+    margin-top:22px;
+    margin-bottom: 20px;
+    background:#b4b4b4;
+    flex-direction: column;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+    border-right: 4px solid #000;
+    border-bottom: 4px solid #000;
+
+}
+
+.meta-info {
+  width: 100%;   
+  display: flex;
+  color:#5b6b99;
+  font-size:.7rem;
+  margin-top:8px;
+  align-items: center;
+  justify-content: space-around;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.lista-post-destacado{
+
+    padding:5px;
+    line-height: 1;
+    font-style: bold;
+    color:var(--primary);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.lista-posts li p:nth-of-type(2){
+    padding:5px;
+    margin-top:12px;
+    margin-bottom:12px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: clamp(0.625rem, 0.5529rem + 0.3846vw, 0.8125rem);
+}
+
+.description{
+  margin-top:2%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.lista-posts a{
+    color:#000;
+    cursor:pointer;
+    width: max-content; 
+    text-decoration: none;
+}
+
+.lista-posts a:hover{
+  color:#4790f7;
+}
+
+.lista-posts a p{
+    margin: 0;
+    font-weight: bold;
+    font-size: clamp(0.75rem, 0.5096rem + 1.2821vw, 1.375rem); 
+}
+
+.lista-posts a:nth-of-type(2){
+    
+    color:var(--primary);
+    align-self: flex-end;
+    text-decoration: none;
+}
+
+.lista-posts a:nth-of-type(2) button{
+    
+  color:black;
+  cursor:pointer;
+  font-weight: bold;
+  font-family: 'Sans';
+  background:#c4c4c4;
+  display: inline-block;
+  text-decoration: none;
+  padding:5px 12px 5px 12px;
+  font-size: clamp(0.625rem, 0.5529rem + 0.3846vw, 0.8125rem); 
+
+    border-top:1px solid #000;
+    border-left:1px solid #000;
+    border-right:3px solid #000;
+    border-bottom:3px solid #000;
+
+}
+
+.lista-posts a:nth-of-type(2) button:hover{
+    color:black;
+    background:#e0e0e0;
+}
+
+.lista-posts a:nth-of-type(2) button:active{
+  border-top:3px solid #000;
+  border-left:3px solid #000;
+  border-right:1px solid #000;
+  border-bottom:1px solid #000;
+}
+
+.contenedor-banner{
+    display:flex; 
+    flex-direction:row;
+    
+}
+
+/* BLOG */
+
+/* BLOG - Estética Minimalista / Bear Blog Style */
+
+.blog-container {
+  max-width: 900px;       /* Ancho óptimo para lectura */
+  width: 90%;
+  line-height: 1.7;       /* Interlineado más relajado */
+  color: #1a1a1a;
+  margin: 3rem auto;
+  padding: 0 40px;        /* Márgenes laterales generosos */
+  background: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Enlace de volver - Estilo botón sutil */
+.link-back {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border: 1px solid #1a1a1a;
+  background: #f4f4f4;
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  margin-bottom: 1.5rem;
+}
+
+.link-back:hover {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+/* Contenedor del Artículo */
+.post-card {
+  padding: 0;
+  margin-top: 2rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.post-card header {
+    display: flex;
+    flex-direction: column; /* Alinea los hijos uno debajo del otro */
+    gap: 0.5rem;            /* Espacio pequeño entre el título y la fecha/autor */
+    margin-bottom: 0.5rem;    /* Espacio antes de que empiece el cuerpo del texto */
+}
+
+/* Títulos con fuente Serif */
+.post-title {
+  margin: 0 0 0.8rem 0;
+  color: #000000;
+  line-height: 1.2;
+  font-size: 2.6rem;
+  font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+.post-meta {
+  color: #666666;
+  font-size: 0.9rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 1.2rem;
+  font-style: italic;
+  letter-spacing: 0.3px;
+}
+
+.post-meta strong {
+  color: #333;
+}
+
+/* Cuerpo del Post */
+.post-body {
+  color: #1a1a1a;
+  font-size: 1.15rem;
+  text-align: left; /* Alineación natural Bear Blog */
+}
+
+/* Forzar que todo el contenido herede la fuente limpia */
+.post-body * {
+  background: transparent;
+}
+
+.post-body p {
+  margin-bottom: 1.8rem;
+  margin-top: 0;
+}
+
+.post-body strong {
+  color: #000000;
+  font-weight: 700;
+}
+
+/* Encabezados internos */
+.post-body h2, 
+.post-body h3 {
+  font-family: Georgia, serif;
+  margin: 2.8rem 0 1.2rem 0;
+  color: #111111;
+  line-height: 1.3;
+  text-decoration: none; /* Quitamos el subrayado previo para limpiar la vista */
+}
+
+/* Bloques de código (Inline) */
+.post-body code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background: #f0f0f0;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: #d13131; /* Un toque de color para resaltar código */
+}
+
+/* Citas / Reflexiones */
+.post-body blockquote {
+  margin: 2.5rem 0;
+  padding: 0.5rem 0 0.5rem 1.8rem;
+  border-left: 3px solid #1a1a1a;
+  font-style: italic;
+  color: #555555;
+  line-height: 1.6;
+}
+
+/* Imágenes */
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2.5rem auto;
+  border-radius: 2px;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 1024px) {
+  .blog-container {
+    max-width: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 24px; /* Margen más pequeño en móviles para ganar pantalla */
+    margin: 1.5rem auto;
+  }
+  
+  .post-title {
+    font-size: 2.1rem;
+  }
+
+  .post-body {
+    font-size: 1.1rem;
+  }
+}
+
+/* TABLA */
+
+/* Contenedor para scroll horizontal en móviles */
+.table-container {
+    overflow-x: auto;
+}
+
+/* Estilos generales de la tabla */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 18px;
+    background-color: white;
+}
+
+/* Estilos para encabezados y celdas */
+.custom-table th, 
+.custom-table td {
+    font-family: 'FinSerif', serif; /* Asegúrate de que la fuente esté cargada */
+    padding: 12px 15px;
+    border: 1px solid #969696;
+}
+
+/* Variaciones específicas para el encabezado */
+.custom-table thead tr {
+    border-bottom: 1px solid #eee;
+}
+
+.th-dark {
+    color: #fff;
+    background-color: #969696;
+    font-weight: 600;
+}
+
+.th-light {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Estilos para el cuerpo de la tabla */
+.td-highlight {
+    color: #fff;
+    background-color: #969696;
+    padding: 5px 15px; /* Mantiene el padding reducido que tenías */
+}
+
+.td-highlight a{
+  background:#969696;
+}
+
+.td-standard {
+    color: #000;
+    padding: 5px 15px;
+}
+
+/* Estilos del enlace */
+.table-link {
+    color: #fff;
+    text-decoration: underline;
+    width: max-content;
+    cursor: pointer;
+}

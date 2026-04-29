@@ -1,0 +1,36 @@
+fijado: false
+author: '@L3anav'
+date: "29-04-2026"
+title: Contruí un linktr.ee ¿de que sirvió?
+description: Por qué este proyecto me sirvió a mí. Que aprendí?, hasta donde llegué.
+body: | 
+
+  <article>
+  <p>
+    Este proyecto llegó a mí estando en Twitter, cuando leí de alguien de hacer un proyecto de ese estilo. En ese entonces, lo pensé hacer para el <strong>CLI</strong> y funcionó; me gustó y aprendí el flujo de las herramientas de terminal, pero no quedé conforme con que solo pudiera ser usado así.
+  </p>
+
+  <p>
+    Mi estado antes de empezar el proyecto fue haber ya construido proyectos de <strong>frontend</strong>, como un generador de archivos README en AsciiDoc (estilo <a href="https://readme.so/" target="_blank">readme.so</a>), pero eso se quedaba en el <strong>frontend</strong> y quería explorar la dinámica de conectar el <strong>frontend</strong> con el <strong>backend</strong>.
+  </p>
+
+  <p>
+    Un proyecto propio de este estilo me sirvió para entender mejor la conexión, que era un paso nuevo para mí. El proyecto me forzó aprender a utilizar herramientas con las que no había tenido contacto, como <strong>Docker</strong>. La tarea de pasar del <strong>CLI</strong> a una <strong>Web App</strong> implicó resolver problemas interesantes en el camino.
+  </p>
+
+  <p>
+    Los desafíos fueron varios. Primeramente, como el <strong>CLI</strong> estaba escrito en <strong>Python</strong>, decidí hacer la <strong>API REST</strong> con <strong>Flask</strong> para aprovechar lo ya hecho; pero debido a problemas de ejecución en producción que no pude comprender en ese momento (y que hoy entiendo, gracias a la facilidad que aporta la IA para comprender temas nuevos), supe que se debío a cómo <strong>Flask</strong> maneja el inicio del servicio en producción. Al no comprenderlo esto del todo, decidí reescribir todo con <strong>Node.js</strong>, que tenía una documentación más clara y además al ser en <strong>javascript</strong>, ya tenia algo de conocimiento en el lenguaje más lo que encontré en ese momento sirvió para resolver el proyecto.
+  </p>
+
+  <p>
+    Luego tuve problemas al no poder aplicar estilos que se comportaran igual tanto en los select como en inputs; solucioné esto usando una librería para <strong>React</strong> que existía para controlar mejor los estilos en los selects. En el <strong>backend</strong>, tuve problemas con las rutas locales de archivos que manejaba <strong>Render</strong> con el contenedor. Al no poder usar la terminal para ver el árbol de archivos, tuve que ir revisando los logs para ver cómo se construían las rutas hasta dar con la correcta, ya que las dinámicas no funcionaban como esperaba.
+  </p>
+
+  <p>
+    Por último, otro de los que recuerdo fue tener problemas con el famoso <strong>CORS</strong>. Al final, mi solución para no complicarme la vida fue poner el clásico origin *. Al no controlar el flujo de conexión entre <strong>Vercel</strong> y <strong>Render</strong>, decidí no complicarme en un proyecto público y práctico personal, pero entiendo que a nivel de seguridad no es lo óptimo.
+  </p>
+
+  <p>
+    En conclusión, fue un proyecto interesante donde si bien no pude desarrollarlo como lo planteé desde un principio, aprendí nuevas cosas y lo pude experimentar en primera persona. Quizás uno de mis grandes fallos, y donde más tiempo perdí, fue en no modelarlo antes de programar y no tomar las decisiones importantes antes. Más allá de eso, fue interesante y mi primer acercamiento al contacto del front contra el back teniendo todo el control del proceso.
+  </p>
+  </article>

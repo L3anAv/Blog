@@ -1,0 +1,50 @@
+{{define "mainContent"}}
+{{if .ActiveLasted}}
+<section class="ultimos-posts">
+  
+        <p>Últimos {{ .CantPost }} posteos</p>
+        <ul>
+            {{ range .Latest }}
+                    <li><span>{{ if .Fijado }}★{{else}} ◆ {{ end }}</span><a href="{{ $.BaseURL }}{{ .Link }}">{{ .Title }}</a>{{ .Date }}</li>
+            {{ end }}
+        </ul>
+</section>
+{{end}}
+<section class="lista-posts">
+    <ul>
+        {{ range .Posts }}
+    {{ if $.ActivePinned }}
+        {{ if .Fijado }}
+            <li>
+                <p class="lista-post-destacado">★ Entrada Destacada</p>
+                <a href="{{ $.BaseURL }}{{ .Link }}">
+                    <p>{{ .Title }}</p>
+                </a>
+                <p>{{ .Description }}</p>
+                <a href="{{ $.BaseURL }}{{ .Link }}">
+                    <button> Leer -></button>
+                </a>
+                <div class="meta-info">
+                    <span>Escrito por {{ .Author }}</span>
+                    <span>Publicado el {{ .Date }}</span>
+                </div>
+        {{ end }}
+    {{ else }}
+        <li>
+            <a href="{{ $.BaseURL }}{{ .Link }}">
+                <p>{{ .Title }}</p>
+            </a>
+            <p>{{ .Description }}</p>
+            <a href="{{ $.BaseURL }}{{ .Link }}">
+                <button> Leer -></button>
+            </a>
+            <div class="meta-info">
+                    <span>Escrito por {{ .Author }}</span>
+                    <span>Publicado el {{ .Date }}</span>
+            </div>
+        </li>
+    {{ end }}
+{{ end }}
+    </ul>
+</section>
+{{end}}
