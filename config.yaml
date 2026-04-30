@@ -4,8 +4,8 @@ userUrl: "https://l3anav.github.io"
 email: "leandroav.dev@gmail.com"
 siteTitle: "L3anAv | Diario de desarollador "
 useSectionPost:
-    active: true
+    active: false
     limitOfPost: 5
 usePinned:
-    active: true
+    active: false
     

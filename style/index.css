@@ -17,7 +17,7 @@ body{
   display: grid;
   min-height: fit-content;
   place-items: center;
-  grid-template-rows: auto auto auto auto auto;
+  grid-template-rows: auto auto auto;
   background-size: 20px 20px;
   background-color: #e5e7eb;
   background-image: radial-gradient(var(--bg-box) 1px, transparent 1px);
@@ -28,7 +28,7 @@ header {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 header p{

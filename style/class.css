@@ -127,134 +127,122 @@
   background-color: #aeb4be;
 }
 
-.lista-posts{
+.lista-posts {
   width: 95%;
-  margin-top:50px;
+  max-width: 700px;
+  margin: 50px auto;
 }
 
-.lista-posts ul{
-    
-    margin:0;
-    padding: 0;
-    list-style: none;
-    
-    display: flex; 
-    align-items: center; 
-    flex-direction: column; 
-    justify-content: center;
-    
+.lista-posts ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.lista-posts ul li{
-    
-    width: 100%; 
-    display: flex; 
-    padding: 20px;
-    margin-top:22px;
-    margin-bottom: 20px;
-    background:#b4b4b4;
-    flex-direction: column;
-    border-top: 2px solid #000;
-    border-left: 2px solid #000;
-    border-right: 4px solid #000;
-    border-bottom: 4px solid #000;
+.lista-posts ul li {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 0;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  box-sizing: border-box;
+}
 
+.lista-post-destacado {
+  padding: 0;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 0.7rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.lista-posts a {
+  color: #000;
+  cursor: pointer;
+  width: fit-content;
+  text-decoration: none;
+}
+
+.lista-posts a p {
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem); 
+  line-height: 1.2;
+}
+
+.lista-posts a:hover p {
+  color: #4790f7;
+}
+
+.lista-posts li p:nth-of-type(2), 
+.description {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  color: #444;
+  line-height: 1.5;
+  font-size: 0.9rem; 
+  font-family: inherit;
 }
 
 .meta-info {
   width: 100%;   
   display: flex;
-  color:#5b6b99;
-  font-size:.7rem;
-  margin-top:8px;
+  color: #999;
+  font-size: 0.75rem;
+  margin-top: 5px;
   align-items: center;
-  justify-content: space-around;
-  font-family: 'Courier New', Courier, monospace;
+  justify-content: flex-start;
+  gap: 15px;
+  font-family: sans-serif;
 }
 
-.lista-post-destacado{
-
-    padding:5px;
-    line-height: 1;
-    font-style: bold;
-    color:var(--primary);
-    font-family: 'Courier New', Courier, monospace;
+.lista-posts a:nth-of-type(2) {
+  align-self: flex-start;
+  margin-top: 10px;
 }
 
-.lista-posts li p:nth-of-type(2){
-    padding:5px;
-    margin-top:12px;
-    margin-bottom:12px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: clamp(0.625rem, 0.5529rem + 0.3846vw, 0.8125rem);
-}
-
-.description{
-  margin-top:2%;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.lista-posts a{
-    color:#000;
-    cursor:pointer;
-    width: max-content; 
-    text-decoration: none;
-}
-
-.lista-posts a:hover{
-  color:#4790f7;
-}
-
-.lista-posts a p{
-    margin: 0;
-    font-weight: bold;
-    font-size: clamp(0.75rem, 0.5096rem + 1.2821vw, 1.375rem); 
-}
-
-.lista-posts a:nth-of-type(2){
-    
-    color:var(--primary);
-    align-self: flex-end;
-    text-decoration: none;
-}
-
-.lista-posts a:nth-of-type(2) button{
-    
-  color:black;
-  cursor:pointer;
+.lista-posts a:nth-of-type(2) button {
+  color: #000;
+  cursor: pointer;
   font-weight: bold;
-  font-family: 'Sans';
-  background:#c4c4c4;
-  display: inline-block;
-  text-decoration: none;
-  padding:5px 12px 5px 12px;
-  font-size: clamp(0.625rem, 0.5529rem + 0.3846vw, 0.8125rem); 
-
-    border-top:1px solid #000;
-    border-left:1px solid #000;
-    border-right:3px solid #000;
-    border-bottom:3px solid #000;
-
+  background: transparent;
+  border: 1px solid #000;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
 }
 
-.lista-posts a:nth-of-type(2) button:hover{
-    color:black;
-    background:#e0e0e0;
+.lista-posts a:nth-of-type(2) button:hover {
+  background: #000;
+  color: #fff;
 }
 
-.lista-posts a:nth-of-type(2) button:active{
-  border-top:3px solid #000;
-  border-left:3px solid #000;
-  border-right:1px solid #000;
-  border-bottom:1px solid #000;
+.lista-posts a:nth-of-type(2) button:active {
+  transform: translateY(1px);
 }
 
 .contenedor-banner{
     display:flex; 
     flex-direction:row;
-    
 }
 
+.contenedor-banner header{
+  margin-top:20%;
+}
+
+.contenedor-banner header h1 a{
+  all:unset;
+  cursor: pointer;
+  text-decoration: underline;
+}
 /* BLOG */
 
 /* BLOG - Estética Minimalista / Bear Blog Style */
