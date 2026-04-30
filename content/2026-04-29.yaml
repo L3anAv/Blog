@@ -6,7 +6,7 @@ description: Por qué este proyecto me sirvió a mí. Que aprendí?, hasta donde
 body: | 
 
  <article>
-  <p>Este proyecto llegó a mí estando en <strong>Twitter</strong>, cuando leí de hacer un proyecto de app que te dé los archivos para de web de links simil <a href="http://linktr.ee">linktr.ee</a>. En ese entonces, lo hice para <strong>CLI</strong> y funcionó; me gustó y aprendí el flujo de las herramientas de terminal, pero no quedé conforme con que solo pudiera ser usado así.</p>
+  <p>Este proyecto llegó a mí estando en <strong>Twitter</strong>, cuando leí de hacer un proyecto de app que te dé los archivos para subir una web de links simil linktr.ee. En ese entonces, lo hice para <strong>CLI</strong> y funcionó; me gustó y aprendí el flujo de las herramientas de terminal, pero no quedé conforme con que solo pudiera ser usado así.</p>
 
   <p>Mi conocimiento anterior a empezar el proyecto, fue haber hecho, por ejemplo, un editor de archivos <strong>README</strong> con <strong>AsciiDoc</strong> (estilo <a href="http://readme.so">readme.so</a>), pero eso se quedaba en el <strong>frontend</strong>, y esto me aportaba además crear y desplegar <strong>backend</strong>. Entonces lo hice para entender mejor el flujo del <strong>front al back</strong>, lo que me forzó a utilizar herramientas con las que no había tenido contacto antes, como <strong>Docker</strong>, entre otras.</p>
 
