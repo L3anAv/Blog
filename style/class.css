@@ -48,10 +48,8 @@
 }
 /* BLOG */
 
-/* BLOG - Estética Minimalista / Bear Blog Style */
-
 .blog-container {
-  margin-top:1%;
+  margin-top: 1%;
   max-width: 50%;
   line-height: 1.7;
   color: #1a1a1a;
@@ -59,12 +57,13 @@
   background: var(--primer);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   transition: all 0.3s ease;
+  /* Ajuste para evitar desbordes */
+  overflow-wrap: break-word;
 }
 
-/* Contenedor del Artículo */
 .post-card {
   display: grid;
-  grid-template-columns: auto 1fr; /* Columna para el título y columna para el contenido */
+  grid-template-columns: auto 1fr;
   gap: 2rem;
   align-items: start;
   padding: 0;
@@ -81,22 +80,19 @@
 }
 
 .post-card header {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    
-    /* Magia para el texto vertical */
-    writing-mode:vertical-lr;
-    transform: rotate(180deg); /* Rotamos para que se lea de abajo hacia arriba */
-    white-space: nowrap;
-    top:0;
-    align-self: top; /* Se alinea con la base del contenido si es corto */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  top: 0;
+  align-self: top;
 }
 
-/* Títulos con fuente Serif */
 .post-title {
   line-height: 1.2;
-  font-size: 1.9rem; /* Un poco más grande luce mejor en vertical */
+  font-size: 1.9rem;
   margin: 0;
   font-family: Georgia, Times, "Times New Roman", serif;
 }
@@ -112,16 +108,16 @@
   color: #333;
 }
 
-/* Cuerpo del Post */
 .post-body {
   grid-column: 2;
   color: #1a1a1a;
   font-size: 0.9rem;
   text-align: left;
   padding-left: 2rem;
+  /* Ajuste técnico: permite que el contenido respete el ancho del padre */
+  min-width: 0;
 }
 
-/* Forzar que todo el contenido herede la fuente limpia */
 .post-body * {
   background: transparent;
 }
@@ -136,27 +132,25 @@
   font-weight: 700;
 }
 
-/* Encabezados internos */
 .post-body h2, 
 .post-body h3 {
   font-family: Georgia, serif;
   margin: 2.8rem 0 1.2rem 0;
   color: #111111;
   line-height: 1.3;
-  text-decoration: none; /* Quitamos el subrayado previo para limpiar la vista */
 }
 
-/* Bloques de código (Inline) */
 .post-body code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   background: #f0f0f0;
   padding: 3px 6px;
   border-radius: 3px;
   font-size: 0.9em;
-  color: #d13131; /* Un toque de color para resaltar código */
+  color: #d13131;
+  /* Evita que el código rompa el layout en móviles */
+  word-break: break-all;
 }
 
-/* Citas / Reflexiones */
 .post-body blockquote {
   margin: 2.5rem 0;
   padding: 0.5rem 0 0.5rem 1.8rem;
@@ -166,7 +160,6 @@
   line-height: 1.6;
 }
 
-/* Imágenes */
 .post-body img {
   max-width: 100%;
   height: auto;
@@ -175,7 +168,8 @@
   border-radius: 2px;
 }
 
-/* Media Queries para Responsividad */
+/* --- Ajustes de Responsividad Solicitados --- */
+
 @media (max-width: 1024px) {
   .blog-container {
     max-width: 85%;
@@ -183,17 +177,41 @@
 }
 
 @media (max-width: 768px) {
+  .blog-container {
+    max-width: 100%; /* El texto ocupa el 100% del ancho */
+    padding: 0 20px; /* Espaciado mínimo lateral */
+  }
+
   .post-card {
-    display: block;
+    /* Mantenemos el orden: título a la izquierda, contenido a la derecha */
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
   }
+
   .post-card header {
-    writing-mode: horizontal-tb;
-    transform: none;
-    margin-bottom: 2rem;
+    /* Mantenemos el estilo vertical pero permitimos que el título baje un poco el tamaño */
+    white-space: normal; 
   }
+
+  .post-title {
+    font-size: 1.3rem; /* Título un poco más chico para móviles */
+  }
+
   .post-body {
-    border-left: none;
-    padding-left: 0;
+    padding-left: 1rem; /* Reducimos el padding para ganar espacio */
+    font-size: 0.95rem;
+    overflow-wrap: break-word; /* El texto no se sale del contenedor */
+  }
+}
+
+/* Ajuste extra para móviles muy estrechos */
+@media (max-width: 480px) {
+  .blog-container {
+    margin-top: 0;
+    padding: 0 10px;
+  }
+  .post-card {
+    gap: 0.8rem;
   }
 }
 

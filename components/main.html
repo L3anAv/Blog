@@ -9,8 +9,8 @@
 .page-wrapper {
   width: 100%;
   margin-top: 2%;
-  min-height: 95dvh;
   display: grid;
+  min-height: fit-content;
   background: var(--primer);
   grid-template-rows: auto 1fr;
   grid-template-columns: 200px 1fr 1fr;
@@ -99,20 +99,19 @@
 
 /* ULTIMOS POSTS */
 .ultimos-posts {
-  grid-column: 2 / span 2;
   grid-row: 1;
-  background: #edf2f7;
-  border-bottom: 2px solid #000;
   padding: 6px 10px;
+  background: #edf2f7;
+  grid-column: 2 / span 2;
+  border-bottom: 2px solid #000;
 }
 
 .ultimos-posts > p {
   font-size: 10px;
   font-weight: bold;
   color: #a4adbf;
-  letter-spacing: 1px;
-  text-transform: uppercase;
   margin-bottom: 4px;
+  letter-spacing: 1px;
 }
 
 .ultimos-posts ul {
@@ -121,15 +120,15 @@
 }
 
 .ultimos-posts ul li {
+  margin: 0;
+  padding: 2px 0;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   font-size: 11px;
   color: #94a3b8;
-  border-bottom: 1px solid #d1d9e0;
-  padding: 2px 0;
+  align-items: center;
   background: transparent;
-  margin: 0;
+  justify-content: space-between;
+  border-bottom: 1px solid #d1d9e0;
 }
 
 .ultimos-posts ul li a {
@@ -226,15 +225,31 @@
   font-size: 10px;
   gap: 10px;
 }
-
+@media (min-width: 800px){
+  .ultimos-posts { display: none; }
+}
 @media (max-width: 600px) {
-  .page-wrapper { grid-template-columns: 1fr; }
+  .page-wrapper {grid-template-columns: 1fr; }
   .sidebar { grid-column: 1; grid-row: 1; }
-  .ultimos-posts { grid-column: 1; grid-row: 2; }
-  .lista-posts { grid-column: 1; grid-row: 3; }
+  .ultimos-posts { width: 100%; overflow-wrap: break-word; grid-column: 1; grid-row: 1; }
+  .lista-posts { display:none; grid-column: 1; grid-row: 3; }
   .lista-posts ul { grid-template-columns: 1fr; }
 }
 </style>
+{{if .ActiveLasted}}
+  <section class="ultimos-posts">
+    <p>Últimos {{ .CantPost }} posteos</p>
+    <ul>
+      {{ range .Latest }}
+        <li>
+          <span>{{ if .Fijado }}★{{ else }}◆{{ end }}</span>
+          <a href="{{ $.BaseURL }}{{ .Link }}">{{ .Title }}</a>
+          {{ .Date }}
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+{{end}}
 
 <div class="page-wrapper">
   <aside class="sidebar">
@@ -263,20 +278,7 @@
     </div>
   </aside>
 
-  {{if .ActiveLasted}}
-  <section class="ultimos-posts">
-    <p>Últimos {{ .CantPost }} posteos</p>
-    <ul>
-      {{ range .Latest }}
-        <li>
-          <span>{{ if .Fijado }}★{{ else }}◆{{ end }}</span>
-          <a href="{{ $.BaseURL }}{{ .Link }}">{{ .Title }}</a>
-          {{ .Date }}
-        </li>
-      {{ end }}
-    </ul>
-  </section>
-  {{end}}
+  
 
   <section class="lista-posts">
     <ul>
