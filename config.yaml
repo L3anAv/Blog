@@ -2,7 +2,7 @@
 baseUrl: "/Blog/"
 userUrl: "https://l3anav.github.io"
 email: "leandroav.dev@gmail.com"
-siteTitle: "L3anAv | Diario de desarollador "
+siteTitle: "L3anAv | Diario de desarollador"
 useSectionPost:
     active: false
     limitOfPost: 5
