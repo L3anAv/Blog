@@ -1,9 +1,12 @@
 :root {
   /* Paleta de Colores */
-  --primary: #0663e9;
-  --secondary: #f99c16;
-  --bg-body: #ebeaef;
-  --bg-box:#d3d2d0;
+  --primer: #D0CCBD;
+  --segundo: #BDC1D0;
+  --bg-body: #161616;
+  --links:#4790f7;
+  --bg-links:rgb(220, 235, 219);
+  --bg-box:rgb(207, 202, 191);
+  --sidebar:rgb(241, 251, 240);
 
   /* Tipografía */
   --font-main: Verdana, sans-serif;

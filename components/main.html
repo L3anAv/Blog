@@ -1,50 +1,309 @@
 {{define "mainContent"}}
-{{if .ActiveLasted}}
-<section class="ultimos-posts">
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  width: 100%;
+  margin-top: 2%;
+  min-height: 95dvh;
+  display: grid;
+  background: var(--primer);
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 200px 1fr 1fr;
+}
+
+/* SIDEBAR */
+.sidebar {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  gap: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  background: var(--sidebar);
+}
+
+.sidebar-avatar {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.sidebar-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sidebar-name {
+  color: #000;
+  margin-top: 2px;
+  font-size: 15px;
+  text-align: center;
+  font-family: var(--font-secundary);
+}
+
+.sidebar-state {
+  margin: 0;
+  font-size: 10px;
+  font-weight: bold;
+  color: #000;
+  text-align: left;
+}
+
+.sidebar-block {
+  background: var(--bg-box);
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  border-right: 3px solid #000;
+  border-bottom: 3px solid #000;
+  padding: 6px 8px;
+}
+
+.sidebar-block-title {
+  font-size: 10px;
+  font-weight: bold;
+  color: #555;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.sidebar-block p {
+  font-size: 11px;
+  color: #222;
+  line-height: 1.5;
+}
+
+.sidebar-block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-block ul li {
+  font-size: 11px;
+  color: #222;
+  padding: 1px 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  /* Reset para los li del sidebar */
+  margin: 0; 
+  background: transparent;
+  flex-direction: row;
+}
+
+/* ULTIMOS POSTS */
+.ultimos-posts {
+  grid-column: 2 / span 2;
+  grid-row: 1;
+  background: #edf2f7;
+  border-bottom: 2px solid #000;
+  padding: 6px 10px;
+}
+
+.ultimos-posts > p {
+  font-size: 10px;
+  font-weight: bold;
+  color: #a4adbf;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.ultimos-posts ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ultimos-posts ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #94a3b8;
+  border-bottom: 1px solid #d1d9e0;
+  padding: 2px 0;
+  background: transparent;
+  margin: 0;
+}
+
+.ultimos-posts ul li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 12px;
+  flex: 1;
+  margin: 0 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* LISTA POSTS - CAMBIOS AQUÍ */
+.lista-posts {
+  grid-column: 2 / span 2;
+  grid-row: 2;
+  padding: 8px;
+}
+
+.lista-posts ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  min-height: 25dvh;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.lista-posts ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  background: white;
+  border: 1px solid #eee;
+  height: 100%; 
+}
+
+.content-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-inferior {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.lista-post-destacado {
+  font-size: 9px;
+  font-weight: bold;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.lista-posts a {
+  all: unset;
+  width: fit-content;
+  user-select: none;
+  text-decoration: none;
+}
+
+.lista-posts a p {
   
-        <p>Últimos {{ .CantPost }} posteos</p>
-        <ul>
-            {{ range .Latest }}
-                    <li><span>{{ if .Fijado }}★{{else}} ◆ {{ end }}</span><a href="{{ $.BaseURL }}{{ .Link }}">{{ .Title }}</a>{{ .Date }}</li>
-            {{ end }}
-        </ul>
-</section>
-{{end}}
-<section class="lista-posts">
+  color: #000;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+.lista-posts a p:hover {
+  color: var(--links);
+}
+
+.description {
+  width:80%;
+  margin-top: 30px;
+  color: #444;
+  font-size: 12px;
+  line-height: 1.4;
+  user-select: none;
+  align-self: center;
+}
+
+.meta-info {
+  display: flex;
+  color: #999;
+  font-size: 10px;
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .page-wrapper { grid-template-columns: 1fr; }
+  .sidebar { grid-column: 1; grid-row: 1; }
+  .ultimos-posts { grid-column: 1; grid-row: 2; }
+  .lista-posts { grid-column: 1; grid-row: 3; }
+  .lista-posts ul { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="page-wrapper">
+  <aside class="sidebar">
+    <div class="sidebar-state">🟢 Escribiendo...</div>
+    <div class="sidebar-avatar">
+      <img src="assets/profile.webp" alt="avatar">
+    </div>
+    <div class="sidebar-name">Leandro Avila</div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-block-title">Sobre mi / / > </div>
+      <ul>
+        <li>30 años</li>
+        <li>Frontend Developer</li>
+        <li>Buenos Aires, Argentina</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-block">
+      <ul>
+        <li><a href="https://l3anav.github.io/portfolio" target="_blank">Web</a></li>
+        <li><a href="mailto:leanav.dev@gmail.com" target="_blank">Email</a></li>
+        <li><a href="https://x.com/l3anAv" target="_blank">Twitter</a></li>
+        <li><a href="https://www.github.com/L3anAv" target="_blank">Github</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  {{if .ActiveLasted}}
+  <section class="ultimos-posts">
+    <p>Últimos {{ .CantPost }} posteos</p>
     <ul>
-        {{ range .Posts }}
-    {{ if $.ActivePinned }}
-        {{ if .Fijado }}
-            <li>
-                <p class="lista-post-destacado">★ Entrada Destacada</p>
-                <a href="{{ $.BaseURL }}{{ .Link }}">
-                    <p>{{ .Title }}</p>
-                </a>
-                <p>{{ .Description }}</p>
-                <a href="{{ $.BaseURL }}{{ .Link }}">
-                    <button> Leer -></button>
-                </a>
-                <div class="meta-info">
-                    <span>Escrito por {{ .Author }}</span>
-                    <span>Publicado el {{ .Date }}</span>
-                </div>
-        {{ end }}
-    {{ else }}
+      {{ range .Latest }}
         <li>
-            <a href="{{ $.BaseURL }}{{ .Link }}">
-                <p>{{ .Title }}</p>
-            </a>
-            <p>{{ .Description }}</p>
-            <a href="{{ $.BaseURL }}{{ .Link }}">
-                <button> Leer -></button>
-            </a>
-            <div class="meta-info">
-                    <span>Escrito por {{ .Author }}</span>
-                    <span>Publicado el {{ .Date }}</span>
-            </div>
+          <span>{{ if .Fijado }}★{{ else }}◆{{ end }}</span>
+          <a href="{{ $.BaseURL }}{{ .Link }}">{{ .Title }}</a>
+          {{ .Date }}
         </li>
-    {{ end }}
-{{ end }}
+      {{ end }}
     </ul>
-</section>
+  </section>
+  {{end}}
+
+  <section class="lista-posts">
+    <ul>
+      {{ range .Posts }}
+      <li>
+        <div class="content-top">
+          {{ if and $.ActivePinned .Fijado }}
+            <p class="lista-post-destacado">★ Entrada Destacada</p>
+          {{ end }}
+          <a href="{{ $.BaseURL }}{{ .Link }}">
+            <p>{{ .Title }}</p>
+          </a>
+          <p class="description">{{ .Description }}</p>
+        </div>
+
+        <div class="info-inferior">
+          <a href="{{ $.BaseURL }}{{ .Link }}">
+            <button>Leer -></button>
+          </a>
+          <div class="meta-info">
+            <span>Escrito por {{ .Author }}</span>
+            <span>Publicado el {{ .Date }}</span>
+          </div>
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+</div>
 {{end}}

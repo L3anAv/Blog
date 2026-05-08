@@ -7,5 +7,5 @@ useSectionPost:
     active: false
     limitOfPost: 5
 usePinned:
-    active: false
+    active: true
     

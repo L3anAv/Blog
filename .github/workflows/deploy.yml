@@ -1,4 +1,4 @@
-name: Deploy Blog
+name: Deploy with Yamblg
 
 on:
   push:
@@ -25,7 +25,6 @@ jobs:
       - name: Install Yamblg
         run: go install github.com/l3anav/yamblg@latest
 
-    # Al usar el binario instalado, ya no necesitas go mod download ni go run .
       - name: Build site
         run: yamblg build
 

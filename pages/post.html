@@ -2,18 +2,23 @@
 {{define "content"}}
 <section class="blog-container">
   <article class="post-card">
-    <a class="link-back" href="{{ .BaseURL }}">← Volver al inicio</a>
+    <a href="{{ .BaseURL }}">
+      <button>← Volver al inicio</button>
+    </a>
+    
     <header>
       <h1 class="post-title">{{ .Post.Title }}</h1>
-      <p class="post-meta">
-        <em>Publicado por <strong>{{ .Post.Author }}</strong> • {{ .Post.Date }}</em>
-      </p>
     </header>
-
+    
     <div class="post-body">
+    <p class="post-meta">
+        <em>Publicado por <strong>{{ .Post.Author }}</strong> • {{ .Post.Date }}</em>
+    </p>
       {{ .Post.ContentBody }}
     </div>
-    <a class="link-back" href="{{ .BaseURL }}">← Volver al inicio</a>
+    <a href="{{ .BaseURL }}">
+      <button>← Volver al inicio</button>
+    </a>
   </article>
 </section>
 {{ end }}
